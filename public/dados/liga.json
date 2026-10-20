@@ -1,0 +1,177 @@
+{
+  "partidas": 336,
+  "times": 68,
+  "jogadores": 411,
+  "campeonatos": [
+    "Rush Series Esquenta",
+    "Rush Series Esquenta 2",
+    "Rush Series Inclusivo",
+    "Univavá"
+  ],
+  "metricas": {
+    "rounds": 13236,
+    "win": 0.5,
+    "eco_delta": 0.0,
+    "atk": {
+      "n": 6618,
+      "win": 0.5178
+    },
+    "def": {
+      "n": 6618,
+      "win": 0.4822
+    },
+    "economia": {
+      "pistol": {
+        "n": 1344,
+        "share": 0.1015,
+        "win": 0.5,
+        "esperado": 0.5,
+        "delta": 0.0
+      },
+      "eco": {
+        "n": 909,
+        "share": 0.0687,
+        "win": 0.1397,
+        "esperado": 0.1411,
+        "delta": -0.0013
+      },
+      "semi": {
+        "n": 1563,
+        "share": 0.1181,
+        "win": 0.3007,
+        "esperado": 0.2999,
+        "delta": 0.0008
+      },
+      "full": {
+        "n": 9420,
+        "share": 0.7117,
+        "win": 0.5678,
+        "esperado": 0.5678,
+        "delta": 0.0
+      }
+    },
+    "full_vs_eco": {
+      "n": 744,
+      "win": 0.879
+    },
+    "eco_vs_full": {
+      "n": 744,
+      "win": 0.121
+    },
+    "apos_pistola_ganha": {
+      "n": 657,
+      "win": 0.8645
+    },
+    "apos_pistola_perdida": {
+      "n": 657,
+      "win": 0.1355,
+      "classes": {
+        "eco": 0.9041,
+        "semi": 0.0959
+      }
+    },
+    "abertura": {
+      "n": 13176,
+      "fk_rate": 0.5,
+      "win_com_fk": 0.713,
+      "win_sem_fk": 0.287,
+      "tempo_fk_s": 21.3293
+    },
+    "ataque": {
+      "plant_rate": 0.7031,
+      "plant_s": 48.6791,
+      "n_plants": 4653,
+      "sites": {
+        "A": 2040,
+        "B": 1603,
+        "C": 1010
+      },
+      "site_win": {
+        "A": 0.7245,
+        "B": 0.6987,
+        "C": 0.6901
+      },
+      "pos_plant_win": 0.7081
+    },
+    "defesa": {
+      "retake_n": 4653,
+      "retake_win": 0.2919
+    }
+  },
+  "trade_liga": 0.213,
+  "mapas": [
+    {
+      "mapa": "abyss",
+      "partidas": 13,
+      "atk": 0.6113,
+      "def": 0.3887
+    },
+    {
+      "mapa": "ascent",
+      "partidas": 86,
+      "atk": 0.4731,
+      "def": 0.5269
+    },
+    {
+      "mapa": "breeze",
+      "partidas": 5,
+      "atk": 0.6087,
+      "def": 0.3913
+    },
+    {
+      "mapa": "fracture",
+      "partidas": 2,
+      "atk": 0.55,
+      "def": 0.45
+    },
+    {
+      "mapa": "haven",
+      "partidas": 75,
+      "atk": 0.5301,
+      "def": 0.4699
+    },
+    {
+      "mapa": "lotus",
+      "partidas": 82,
+      "atk": 0.5318,
+      "def": 0.4682
+    },
+    {
+      "mapa": "pearl",
+      "partidas": 3,
+      "atk": 0.35,
+      "def": 0.65
+    },
+    {
+      "mapa": "split",
+      "partidas": 36,
+      "atk": 0.5377,
+      "def": 0.4623
+    },
+    {
+      "mapa": "summit",
+      "partidas": 10,
+      "atk": 0.4978,
+      "def": 0.5022
+    },
+    {
+      "mapa": "sunset",
+      "partidas": 24,
+      "atk": 0.5188,
+      "def": 0.4812
+    }
+  ],
+  "metodologia": {
+    "trade_ms": 5000,
+    "classes_economia": "pistol (rounds 1 e 13), eco (loadout medio <1500), semi (<3000), full (>=3000)",
+    "papeis": {
+      "entry_z": 0.7,
+      "lurker_z": 0.8,
+      "suporte_z": 0.7,
+      "estrela_z": 1.0
+    },
+    "esperado": "vitoria esperada por (classe do time, classe do adversario, lado) na liga inteira",
+    "min_partidas_time": 5,
+    "min_partidas_jogador": 3
+  }
+}
