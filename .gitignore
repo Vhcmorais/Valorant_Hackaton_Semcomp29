@@ -1,6 +1,32 @@
+
+# Dependências
 /node_modules
+
+# Arquivos gerados pelo Next.js
 /.next
 /out
+/build
+
+# Arquivos de compilação e TypeScript
 *.tsbuildinfo
+next-env.d.ts
+
+# Variáveis de ambiente
 .env*
 !.env.example
+
+# Arquivos de logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Arquivos de testes
+/coverage
+
+# Configurações locais da Vercel
+/.vercel
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db

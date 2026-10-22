@@ -1,0 +1,198 @@
+/* VALORANT.DATAS — refinamento visual não destrutivo
+   Importe este arquivo DEPOIS de globals.css em src/app/layout.tsx.
+   Mantém classes, variáveis, métricas e rotas existentes. */
+
+:root {
+  --bg: #090e14;
+  --surface: #121c25;
+  --surface-light: #1a2932;
+  --border: #31404b;
+  --red: #ff4655;
+  --mint: #70e4c3;
+  --ink: #f3f5f5;
+  --muted: #9fb0bb;
+  --glow-red: rgba(255, 70, 85, 0.15);
+  --glow-mint: rgba(112, 228, 195, 0.12);
+}
+
+html { scrollbar-color: #41535f #0d151c; }
+body {
+  background: #090e14;
+  color: var(--ink);
+  font-family: Inter, "Segoe UI", Arial, Helvetica, sans-serif;
+  font-variant-numeric: tabular-nums;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  background:
+    radial-gradient(ellipse 55% 32% at 100% -5%, rgba(255, 70, 85, .105), transparent 85%),
+    radial-gradient(ellipse 42% 38% at -7% 98%, rgba(112, 228, 195, .065), transparent 83%),
+    linear-gradient(180deg, #0b1118 0%, #090e14 55%, #0c141b 100%);
+  opacity: 1;
+}
+
+/* Cabeçalho: destaque da rota atual e maior separação visual */
+.glass {
+  background: rgba(9, 15, 22, 0.89);
+  border-bottom: 1px solid rgba(90, 114, 128, .25);
+  -webkit-backdrop-filter: saturate(130%) blur(18px);
+  backdrop-filter: saturate(130%) blur(18px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .20);
+}
+.glass::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 70, 85, .45), transparent);
+  pointer-events: none;
+}
+.glass nav a[aria-current="page"] {
+  box-shadow: inset 0 -2px 0 rgba(255, 70, 85, .78);
+}
+.glass nav a {
+  outline-offset: -2px;
+}
+
+/* Superfícies e cards: profundidadade sutil, sem deslocamento que prejudique gráficos */
+.panel {
+  position: relative;
+  background:
+    linear-gradient(165deg, rgba(26, 41, 51, .95) 0%, rgba(15, 26, 34, .98) 82%);
+  border: 1px solid rgba(85, 109, 120, .36);
+  border-radius: 17px;
+  box-shadow: 0 13px 32px rgba(0, 0, 0, .17), inset 0 1px 0 rgba(255, 255, 255, .027);
+  transition: border-color .22s ease, box-shadow .22s ease, background .22s ease;
+}
+.panel:hover {
+  border-color: rgba(116, 147, 156, .50);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, .22), inset 0 1px 0 rgba(255, 255, 255, .038);
+}
+.panel:focus-within { border-color: rgba(112, 228, 195, .48); }
+
+/* Hero original: mais identidade, mantendo títulos e CTAs já editados pelo usuário */
+.grid-hatch {
+  isolation: isolate;
+  background-color: #101a24;
+  background-image:
+    radial-gradient(ellipse at 77% 25%, rgba(255, 70, 85, .115), transparent 51%),
+    linear-gradient(rgba(255, 255, 255, .026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .026) 1px, transparent 1px);
+  background-size: auto, 40px 40px, 40px 40px;
+  box-shadow: 0 28px 65px rgba(0, 0, 0, .21), inset 0 1px 0 rgba(255, 255, 255, .035);
+}
+.grid-hatch::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: min(41%, 230px);
+  height: 3px;
+  background: linear-gradient(90deg, #ff4655, rgba(255, 70, 85, 0));
+  pointer-events: none;
+}
+.grid-hatch h1 {
+  text-wrap: balance;
+  text-shadow: 0 3px 19px rgba(0, 0, 0, .14);
+}
+.grid-hatch p { text-wrap: pretty; }
+
+/* Títulos, legenda, microtipografia */
+.eyebrow {
+  font-weight: 800;
+  letter-spacing: .19em;
+  font-size: 10px;
+  color: #84e7cc;
+}
+.section-title { letter-spacing: -.033em; line-height: 1.18; text-wrap: balance; }
+.pill { background: rgba(112, 228, 195, .075); border-color: rgba(112, 228, 195, .23); }
+.ring-dot { box-shadow: 0 0 0 3px rgba(112, 228, 195, .12), 0 0 14px rgba(112, 228, 195, .35); }
+
+/* Formulários e controles — foco acessível, opções legíveis */
+.field {
+  min-height: 42px;
+  background: #0d1820;
+  border-color: #39505b;
+  border-radius: 9px;
+  color: #eaf2f2;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.field:focus-within, .field:focus {
+  border-color: #7ce8ca;
+  box-shadow: 0 0 0 3px rgba(112, 228, 195, .13);
+}
+.field::placeholder, .field input::placeholder { color: #8da5ad; }
+.field option { background: #14232b; color: #edf5f5; }
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid #83ead0;
+  outline-offset: 3px;
+}
+button:not(:disabled) { cursor: pointer; }
+button:disabled { opacity: .55; cursor: not-allowed; }
+
+.btn-primary {
+  background: #ff4655;
+  border: 1px solid rgba(255, 164, 170, .36);
+  box-shadow: 0 6px 20px rgba(255, 70, 85, .15);
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.btn-primary:hover { background: #ff5b69; box-shadow: 0 10px 25px rgba(255, 70, 85, .26); }
+.btn-outline { background: rgba(255, 255, 255, .012); border-color: #536b76; }
+.btn-outline:hover { background: rgba(112, 228, 195, .055); }
+
+/* Tabelas, rankings, legenda de gráficos */
+.table-head { color: #b1c3c9; letter-spacing: .105em; }
+.table-row { border-top-color: #324650; }
+.table-row:hover { background: rgba(112, 228, 195, .035); }
+table { border-collapse: separate; border-spacing: 0; }
+th { white-space: nowrap; }
+.recharts-wrapper:focus, .recharts-surface:focus { outline: none; }
+.scrollbar { scrollbar-width: thin; scrollbar-color: #495f6b transparent; }
+.scrollbar::-webkit-scrollbar-thumb { background: #495f6b; }
+
+/* Navegação opcional responsiva (site-header-refinado.tsx) */
+.vd-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  color: white;
+  background: linear-gradient(140deg, #ff6672, #d72d43);
+  clip-path: polygon(0 0, 100% 0, 100% 74%, 74% 100%, 0 100%);
+  box-shadow: 0 0 25px rgba(255, 70, 85, .16);
+}
+.vd-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: #b1c1c8;
+  font-size: 12px;
+  font-weight: 750;
+  white-space: nowrap;
+  transition: background .2s, color .2s;
+}
+.vd-nav-link:hover { color: #fff; background: rgba(255, 255, 255, .06); }
+.vd-nav-link[aria-current="page"] { color: #ff929c; background: rgba(255, 70, 85, .11); }
+.vd-menu-mobile { border-top: 1px solid rgba(85, 109, 120, .28); background: rgba(9, 15, 22, .98); }
+
+/* Layout mobile: legibilidade e clique confortável */
+@media (max-width: 640px) {
+  .panel { border-radius: 13px; }
+  .grid-hatch { border-radius: 12px; }
+  .grid-hatch h1 { line-height: 1.04; }
+  .btn-primary, .btn-outline { min-height: 44px; justify-content: center; }
+  .glass nav { scrollbar-width: none; }
+  .glass nav::-webkit-scrollbar { display: none; }
+  .table-head { letter-spacing: .06em; }
+  .eyebrow { letter-spacing: .14em; }
+}
+
+/* Movimento discreto, desativado se usuário solicitar menos animação */
+@keyframes vd-reveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+main > section:first-child { animation: vd-reveal .45s ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

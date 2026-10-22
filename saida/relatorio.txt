@@ -1,0 +1,14 @@
+Arquivos: 336 | processados: 336 | com erro: 0
+Nome de arquivo fora do padrao: 0
+Time Blue/Red nao confirmado pelo placar: 0
+Times distintos (pelo nome do arquivo): 68
+Jogadores distintos: 411
+
+Agentes sem nome (0):
+
+Itens de kill sem nome (5):
+  410B2E0B-4CEB-1321-1727-20858F7F3477  tipo=Weapon  (949x)
+  856D9A7E-4B06-DC37-15DC-9D809C37CB90  tipo=Weapon  (481x)
+  95336AE4-45D4-1032-CFAF-6BAD01910607  tipo=Weapon  (207x)
+  39099FB5-4293-DEF4-1E09-2E9080CE7456  tipo=Weapon  (42x)
+  8DB0A1BF-4A50-832A-4566-FAAAA6D250CA  tipo=Weapon  (1x)

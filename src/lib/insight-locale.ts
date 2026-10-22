@@ -1,5 +1,9 @@
+
 import type { Locale } from "@/lib/locale";
 
+// Dicionário responsável pela tradução dos títulos dos insights.
+// Cada título em português possui uma versão equivalente em inglês,
+// permitindo apresentar as análises no idioma selecionado pelo usuário.
 const titles: Record<string, string> = {
   "Controla a abertura dos rounds": "Controls round openings",
   "Converte bem a pistola": "Converts pistol rounds well",
@@ -24,6 +28,8 @@ const titles: Record<string, string> = {
   "Ritmo de ataque rápido": "Fast attacking pace",
 };
 
+// Dicionário que traduz as áreas de análise utilizadas nos insights.
+// Essas categorias identificam o assunto principal de cada observação.
 const areas: Record<string, string> = {
   abertura: "Opening",
   ataque: "Attack",
@@ -35,6 +41,10 @@ const areas: Record<string, string> = {
   tendencia: "Trend",
 };
 
+// Função auxiliar utilizada para traduzir textos com informações variáveis.
+// A expressão regular identifica um padrão no texto original e,
+// quando existe correspondência, envia os trechos encontrados
+// para a função responsável por montar a tradução.
 function translatedMatch(
   value: string,
   pattern: RegExp,
@@ -44,14 +54,23 @@ function translatedMatch(
   return match ? translate(match) : undefined;
 }
 
+// Traduz a categoria do insight quando o idioma selecionado é inglês.
+// Caso a categoria não esteja cadastrada, preserva o valor original.
 export function insightArea(area: string, locale: Locale): string {
   return locale === "en" ? areas[area] ?? area : area;
 }
 
+// Traduz os títulos dos insights gerados pelo processamento.
+// Primeiro verifica as traduções cadastradas no dicionário.
+// Para títulos que possuem informações dinâmicas, utiliza
+// expressões regulares para preservar nomes, mapas e funções.
 export function insightTitle(title: string, locale: Locale): string {
   if (locale !== "en") return title;
   if (titles[title]) return titles[title];
 
+  // Testa os formatos conhecidos de títulos dinâmicos.
+  // O operador ?? utiliza a primeira tradução encontrada.
+  // Caso nenhum padrão corresponda ao texto, mantém o título original.
   return (
     translatedMatch(title, /^(.*?) oscila entre partidas$/, m => `${m[1]} has inconsistent performance`)
     ?? translatedMatch(title, /^Dependência de (.+)$/, m => `Overreliance on ${m[1]}`)
@@ -64,9 +83,17 @@ export function insightTitle(title: string, locale: Locale): string {
   );
 }
 
+// Traduz as descrições completas dos insights para inglês.
+// Como os textos incluem estatísticas, nomes de jogadores e resultados,
+// utiliza expressões regulares para identificar as partes variáveis
+// e inseri-las corretamente nas versões traduzidas.
 export function insightText(description: string, locale: Locale): string {
   if (locale !== "en") return description;
 
+  // Cada regra reconhece uma estrutura de frase produzida pelo agregador.
+  // Os grupos capturados pelas expressões regulares, como m[1] e m[2],
+  // representam valores que devem ser preservados na tradução.
+  // As regras são avaliadas em sequência até encontrar uma correspondência.
   return (
     translatedMatch(description, /^Consistência de (.+?) no ACS \((.+?) partidas\): alterna partidas muito boas e muito ruins\.$/, m =>
       `ACS consistency: ${m[1]} across ${m[2]} matches; performance swings between very strong and very weak games.`,
@@ -143,6 +170,9 @@ export function insightText(description: string, locale: Locale): string {
     ?? translatedMatch(description, /^(.+?) concentra (.+?) do score do time \(o equilíbrio seria ~(.+?)\)\.$/, m =>
       `${m[1]} accounts for ${m[2]} of the team's score (an even share would be ~${m[3]}).`,
     )
+
+    // Se nenhuma expressão regular reconhecer a descrição,
+    // retorna o texto original para evitar perder informações.
     ?? description
   );
 }

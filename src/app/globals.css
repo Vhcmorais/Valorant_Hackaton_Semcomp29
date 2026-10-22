@@ -1,41 +1,211 @@
+
 @import "tailwindcss";
+
+/* =========================================================
+   VARIÁVEIS GLOBAIS
+   Define as cores principais utilizadas na identidade visual
+   do VALORANT.DATAS, facilitando a padronização dos estilos.
+   ========================================================= */
+
 :root { --bg:#081118; --surface:#111e26; --surface-light:#182730; --muted:#8497a0; --border:#26373f; --red:#ff4655; --mint:#70e4c3; --ink:#f0f3f2; }
+
+/* =========================================================
+   ESTILOS GLOBAIS
+   Configura o comportamento básico da página, incluindo
+   cores, fontes, rolagem e elementos de fundo.
+   ========================================================= */
+
+/* Ativa a rolagem suave e define o esquema de cores escuro. */
 html {scroll-behavior:smooth; color-scheme:dark;}
+
+/* Aplica as cores principais, a fonte padrão e a altura mínima da página. */
 body {background:var(--bg);color:var(--ink);font-family:Arial, Helvetica, sans-serif;min-height:100vh;}
+
+/* Adiciona gradientes decorativos fixos ao fundo da aplicação,
+   sem interferir na interação com os elementos da interface. */
 body::before {content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 92% 0%,rgba(255,70,85,.07),transparent 37%),radial-gradient(ellipse at 1% 100%,rgba(60,130,140,.05),transparent 43%);z-index:-1;}
+
+/* Personaliza as cores utilizadas ao selecionar textos. */
 ::selection {background:#ff4655;color:white;}
+
+/* Faz os elementos de formulário herdarem a fonte definida na página. */
 button, input, select {font:inherit;}
+
+
+/* =========================================================
+   COMPONENTES E ELEMENTOS VISUAIS
+   Estilos reutilizáveis para painéis, títulos, bordas
+   e elementos de destaque da interface.
+   ========================================================= */
+
+/* Define a aparência dos painéis, utilizando gradiente,
+   bordas discretas e cantos arredondados. */
 .panel {background:linear-gradient(145deg,rgba(21,37,45,.97),rgba(14,26,33,.98));border:1px solid var(--border);border-radius:16px;}
+
+/* Aplica uma borda discreta utilizando a cor padrão do tema. */
 .subtle-border {border:1px solid var(--border);}
+
+/* Estiliza os pequenos títulos utilizados para identificar
+   seções e categorias dentro do dashboard. */
 .eyebrow {font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:var(--mint)}
+
+/* Define a aparência dos títulos principais das seções,
+   ajustando automaticamente o tamanho conforme a tela. */
 .section-title {font-size:clamp(1.25rem,2vw,1.65rem);font-weight:850;letter-spacing:-.03em;color:var(--ink)}
+
+/* Aplica a cor utilizada em textos de menor destaque. */
 .muted {color:var(--muted)}
+
+/* Cria o efeito de vidro utilizado no cabeçalho,
+   combinando transparência com desfoque do fundo. */
 .glass {background:rgba(12,22,29,.91);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+
+/* Adiciona um padrão de linhas quadriculadas ao fundo,
+   reforçando a identidade visual analítica da aplicação. */
 .grid-hatch {background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px}
+
+
+/* =========================================================
+   BOTÕES E CAMPOS DE FORMULÁRIO
+   Padroniza os elementos interativos e seus efeitos visuais.
+   ========================================================= */
+
+/* Define o botão principal, utilizando a cor vermelha do tema
+   e uma animação suave ao passar o cursor. */
 .btn-primary {background:var(--red);color:white;padding:13px 18px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;transition:background .2s, transform .2s;display:inline-flex;align-items:center;gap:10px;border-radius:4px}
+
+/* Destaca o botão principal ao passar o cursor,
+   alterando sua cor e deslocando-o levemente para cima. */
 .btn-primary:hover {background:#ff6773;transform:translateY(-1px)}
+
+/* Define o botão secundário com fundo transparente
+   e destaque visual por meio de sua borda. */
 .btn-outline {border:1px solid #526771;padding:12px 17px;font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;transition:border .2s;display:inline-flex;align-items:center;gap:10px;border-radius:4px}
+
+/* Altera a cor da borda do botão secundário ao passar o cursor. */
 .btn-outline:hover {border-color:var(--mint)}
+
+/* Padroniza campos de entrada e seleção utilizados
+   em pesquisas, filtros e outras funcionalidades. */
 .field {background:#0b171e;border:1px solid #2b3c45;border-radius:8px;padding:10px 12px;color:var(--ink);outline:none;min-width:0;}
+
+/* Destaca o campo que está recebendo a interação do usuário. */
 .field:focus {border-color:var(--mint)}
+
+
+/* =========================================================
+   TABELAS E INDICADORES
+   Estilos utilizados na apresentação de rankings,
+   estatísticas e informações organizadas em linhas.
+   ========================================================= */
+
+/* Define a aparência dos cabeçalhos das tabelas,
+   com letras maiúsculas e espaçamento entre caracteres. */
 .table-head {font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.13em;color:#91a4ad;}
+
+/* Adiciona divisórias entre as linhas e prepara
+   uma transição suave para o efeito de destaque. */
 .table-row {border-top:1px solid #273740;transition:background .18s}
+
+/* Destaca a linha da tabela quando o cursor passa sobre ela. */
 .table-row:hover {background:#ffffff06}
+
+/* Estiliza pequenas etiquetas utilizadas para apresentar
+   categorias, informações e indicadores específicos. */
 .pill {display:inline-flex;align-items:center;border-radius:5px;border:1px solid #33505a;background:#20313a;padding:4px 9px;font-size:11px;font-weight:700;color:#b6c9ca}
+
+/* Cria o indicador circular verde com efeito luminoso,
+   utilizado para representar o status LIVE. */
 .ring-dot {width:8px;height:8px;display:inline-block;border-radius:100%;background:var(--mint);box-shadow:0 0 16px #70e4c398}
+
+/* Personaliza a barra de rolagem dos elementos que
+   utilizam a classe scrollbar. */
 .scrollbar::-webkit-scrollbar{height:6px;width:6px}.scrollbar::-webkit-scrollbar-thumb{background:#354750;border-radius:20px}
+
+
+/* =========================================================
+   HERO SECTION
+   Define a aparência da seção principal de apresentação,
+   incluindo fundo, iluminação e elementos decorativos.
+   ========================================================= */
+
+/* Estrutura o container principal do hero, utilizando
+   gradientes, sombras e bordas para criar profundidade. */
 .hero-shell { min-height: 430px; border: 1px solid rgba(125, 176, 188, .2); border-radius: 34px; background: radial-gradient(ellipse at 82% 45%, rgba(41, 129, 131, .24), transparent 34%), radial-gradient(ellipse at 3% 100%, rgba(255, 70, 85, .14), transparent 45%), linear-gradient(135deg, #13242d 0%, #0d1a22 58%, #101c26 100%); box-shadow: 0 28px 80px rgba(0, 0, 0, .34), inset 0 1px rgba(255, 255, 255, .06); }
+
+/* Adiciona pequenos pontos decorativos ao fundo do hero.
+   A máscara controla a visibilidade do padrão ao longo da seção. */
 .hero-shell::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .2; background-image: radial-gradient(rgba(193, 221, 222, .4) .7px, transparent .7px); background-size: 23px 23px; mask-image: linear-gradient(90deg, transparent 25%, black 100%); }
+
+/* Cria círculos decorativos posicionados na região superior
+   direita do hero, contribuindo para o efeito de profundidade. */
 .hero-shell::after { content: ""; position: absolute; top: -180px; right: 5%; width: 360px; height: 360px; border: 1px solid rgba(255, 255, 255, .08); border-radius: 50%; box-shadow: 0 0 0 38px rgba(255, 255, 255, .018), 0 0 0 78px rgba(255, 255, 255, .014); pointer-events: none; }
+
+/* Estiliza a etiqueta de apresentação do hero,
+   utilizando transparência e uma borda discreta. */
 .hero-kicker { border: 1px solid rgba(178, 210, 211, .14); background: rgba(203, 230, 230, .045); box-shadow: inset 0 1px rgba(255, 255, 255, .06); }
+
+/* Define a cor e o efeito de iluminação do título principal. */
 .hero-title { color: #f5f7f6; text-shadow: 0 5px 28px rgba(255, 255, 255, .08); }
+
+/* Aplica um gradiente vermelho ao texto destacado do hero,
+   criando um efeito luminoso associado à identidade visual. */
 .hero-highlight { display: inline-block; color: #ff6976; background: linear-gradient(105deg, #ff8a89 0%, #ff4655 55%, #e83750 100%); background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 8px 22px rgba(255, 70, 85, .25)); }
+
+
+/* =========================================================
+   ELEMENTOS GRÁFICOS DO HERO
+   Configura os efeitos de perspectiva, iluminação
+   e profundidade da arte apresentada na seção principal.
+   ========================================================= */
+
+/* Define a perspectiva utilizada pelos elementos gráficos,
+   permitindo a aplicação de transformações tridimensionais. */
 .hero-art-stage { perspective: 1000px; }
+
+/* Cria um elemento decorativo inclinado com gradientes
+   e sombras, reforçando a sensação de profundidade. */
 .hero-art-orbit { transform: rotate(-11deg); background: linear-gradient(135deg, rgba(112, 228, 195, .2), rgba(255, 70, 85, .19)); box-shadow: 0 0 70px rgba(112, 228, 195, .13), inset 0 0 50px rgba(255, 255, 255, .08); }
+
+/* Adiciona um efeito circular de iluminação difusa
+   atrás da arte principal do hero. */
 .hero-art-disc { background: radial-gradient(circle, rgba(112, 228, 195, .2), rgba(33, 113, 116, .15) 45%, transparent 72%); filter: blur(4px); }
+
+/* Configura a aparência tridimensional da arte principal,
+   incluindo rotação, sombra e animação de flutuação. */
 .hero-art { border-radius: 46px 46px 112px 46px; transform: rotateY(-11deg) rotateZ(-4deg) translateY(-7px) scale(1.08); transform-style: preserve-3d; filter: drop-shadow(18px 28px 24px rgba(0, 0, 0, .42)); animation: hero-float 6s ease-in-out infinite; }
+
+/* Estiliza as etiquetas exibidas sobre a arte,
+   utilizando transparência, desfoque e sombras. */
 .hero-art-label { border: 1px solid rgba(213, 239, 237, .2); background: rgba(11, 27, 32, .78); box-shadow: 0 12px 30px rgba(0, 0, 0, .3), inset 0 1px rgba(255, 255, 255, .08); backdrop-filter: blur(12px); }
+
+/* Ajusta o formato e o espaçamento dos botões
+   localizados na área de apresentação do hero. */
 .hero-copy .btn-primary, .hero-copy .btn-outline { border-radius: 999px; padding: 14px 20px; }
+
+
+/* =========================================================
+   ANIMAÇÕES
+   Define o movimento de flutuação aplicado à arte
+   principal, alternando suavemente sua posição e rotação.
+   ========================================================= */
+
 @keyframes hero-float { 0%, 100% { transform: rotateY(-11deg) rotateZ(-4deg) translateY(-7px) scale(1.08); } 50% { transform: rotateY(-8deg) rotateZ(-2deg) translateY(-16px) scale(1.08); } }
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   Ajusta a apresentação do hero em dispositivos menores,
+   garantindo dimensões adequadas para telas de celular.
+   ========================================================= */
+
 @media (max-width: 767px) { .hero-shell { min-height: auto; border-radius: 27px; } .hero-art-stage { width: min(100%, 340px); } }
+
+
+/* =========================================================
+   ACESSIBILIDADE
+   Respeita a preferência do usuário por movimento reduzido,
+   desativando a animação contínua da arte principal.
+   ========================================================= */
+
 @media (prefers-reduced-motion: reduce) { .hero-art { animation: none; } }
