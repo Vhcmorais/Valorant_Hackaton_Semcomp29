@@ -10,7 +10,7 @@ import { num, pct } from "@/lib/format";
 import { text } from "@/lib/locale";
 import { getLocale } from "@/lib/locale-server";
 
-// Componente principal da página inicial do VALORANT.DATAS.
+// Componente principal da página inicial do Valorant Observatory.
 // Reúne a apresentação da plataforma e os principais indicadores
 // estatísticos obtidos a partir dos dados históricos das partidas.
 export default async function Home(){

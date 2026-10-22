@@ -135,8 +135,8 @@ export function SiteHeader({ locale }: { locale: Locale }) {
           {/* Nome e descrição visual do projeto. */}
           <div>
             <div className="text-[15px] font-black leading-none tracking-[.04em] sm:text-[16px]">
-              VALORANT
-              <span className="text-[#ff4655]">.DATAS</span>
+              Valorant
+              <span className="text-[#ff4655]"> Observatory</span>
             </div>
 
             <div className="mt-1 text-[9px] font-bold tracking-[.25em] text-[#93a8b1]">

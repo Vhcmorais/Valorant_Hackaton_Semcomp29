@@ -11,7 +11,7 @@ import { text } from "@/lib/locale";
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   return {
-    title: text(locale, "Comparador de equipes | VALORANT.DATAS", "Team comparison | VALORANT.DATAS"),
+    title: "Valorant Observatory",
     description: text(locale,
       "Compare indicadores históricos de equipes de VALORANT com dados das classificatórias do Hackathon.",
       "Compare historical VALORANT team metrics using data from the Hackathon qualifiers.",

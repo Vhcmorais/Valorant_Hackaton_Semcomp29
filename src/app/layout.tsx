@@ -10,7 +10,7 @@ import "./refinamento.css";
 // Essas informações são utilizadas como título e descrição padrão
 // nas páginas que não possuem metadados específicos.
 export const metadata: Metadata = {
- title:"Valorant.Datas", description:"Análise histórica de partidas, equipes e padrões competitivos com dados autorizados do hackathon."
+ title:"Valorant Observatory", description:"Análise histórica de partidas, equipes e padrões competitivos com dados autorizados do hackathon."
 };
 
 // Componente principal de layout do Next.js.
@@ -35,7 +35,7 @@ export default async function RootLayout({ children }:Readonly<{children:React.R
 
  {/* Rodapé compartilhado com a identificação do projeto,
      sua finalidade e o aviso de independência em relação à Riot Games. */}
- <footer className="border-t border-[#273740] px-5 py-7 text-center text-xs text-[#8ba0aa]">VALORANT.DATAS · {text(locale,"Análise histórica pós-partida","Historical post-match analysis")} · Hackathon SEMCOMP 2026 · {text(locale,"Projeto independente, sem afiliação com a Riot Games","Independent project, not affiliated with Riot Games")}</footer>
+ <footer className="border-t border-[#273740] px-5 py-7 text-center text-xs text-[#8ba0aa]">Valorant Observatory · {text(locale,"Análise histórica pós-partida","Historical post-match analysis")} · Hackathon SEMCOMP 2026 · {text(locale,"Projeto independente, sem afiliação com a Riot Games","Independent project, not affiliated with Riot Games")}</footer>
 
  </body></html>
 }

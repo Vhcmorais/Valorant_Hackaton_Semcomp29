@@ -12,7 +12,7 @@ import { text } from "@/lib/locale";
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   return {
-    title: text(locale, "Diagnóstico de equipes | VALORANT.DATAS", "Team diagnostics | VALORANT.DATAS"),
+    title: "Valorant Observatory",
     description: text(locale,
       "Análise pós-partida com indicadores históricos, evidências e sugestões de revisão para equipes.",
       "Post-match analysis with historical metrics, evidence, and team review suggestions.",
@@ -33,7 +33,7 @@ export default async function DiagnosticoPage() {
     <section className="grid-hatch relative overflow-hidden rounded-xl border border-[#324650] bg-[#102029] px-6 py-10 sm:px-10 sm:py-14">
       <div className="absolute -right-16 top-[-90px] size-[250px] rotate-45 border-[36px] border-[#ff465516]" />
       <div className="relative z-10 max-w-3xl">
-        <div className="eyebrow">VALORANT.DATAS / {text(locale, "Análise pós-partida", "Post-match analysis")}</div>
+        <div className="eyebrow">Valorant Observatory / {text(locale, "Análise pós-partida", "Post-match analysis")}</div>
         <h1 className="mt-4 text-[clamp(32px,4.8vw,56px)] font-black uppercase leading-[1.06] tracking-[-.045em]">{text(locale, "Do número ao", "From numbers to")} <span className="text-[#ff5968]">{text(locale, "diagnóstico.", "diagnosis.")}</span></h1>
         <p className="mt-5 max-w-2xl text-sm leading-7 text-[#adbec4]">{text(locale,
           "Identifique diferenças entre uma equipe e o histórico da liga, veja as evidências por trás de cada análise e encontre situações que valem uma revisão em treino.",

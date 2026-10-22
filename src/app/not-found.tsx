@@ -12,7 +12,7 @@ export default function NotFound() {
     <section className="mx-auto flex min-h-[60vh] max-w-xl flex-col items-center justify-center text-center">
 
       {/* Ícone decorativo que mantém a identidade visual
-          do VALORANT.DATAS mesmo nas páginas de erro. */}
+          do Valorant Observatory mesmo nas páginas de erro. */}
       <div className="grid size-16 place-items-center rounded-2xl border border-[#ff46555c] bg-[#ff465516] text-[#ff7782]">
         <Crosshair size={28} />
       </div>

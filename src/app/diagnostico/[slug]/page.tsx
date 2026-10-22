@@ -15,10 +15,8 @@ type Props = { params: Promise<{slug: string}> };
 
 // Gera o título da página de acordo com a equipe selecionada
 // e com o idioma definido pelo usuário.
-export async function generateMetadata({params}: Props): Promise<Metadata> {
-  const [{slug}, locale] = await Promise.all([params, getLocale()]);
-  const t = await getTeam(slug);
-  return { title: `${t?.sum.nome ?? text(locale, "Equipe", "Team")} · ${text(locale, "Diagnóstico", "Diagnostics")} | VALORANT.DATAS` };
+export async function generateMetadata(): Promise<Metadata> {
+  return { title: "Valorant Observatory" };
 }
 
 // Componente principal da página de diagnóstico de uma equipe.

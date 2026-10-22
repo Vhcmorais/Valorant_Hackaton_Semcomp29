@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎯 VALORANT.DATAS
+# 🎯 Valorant Observatory
 
 ### Every round tells a story.
 
@@ -20,7 +20,7 @@
 
 ## 📖 About the Project
 
-**VALORANT.DATAS** is a bilingual (Portuguese and English) web application designed to help players, teams, and analysts better understand competitive VALORANT performance.
+**Valorant Observatory** is a bilingual (Portuguese and English) web application designed to help players, teams, and analysts better understand competitive VALORANT performance.
 
 Instead of simply displaying match results, the platform organizes historical data into **interactive dashboards, team profiles, side-by-side comparisons, and evidence-based diagnostics**. Its goal is to support post-match review and highlight patterns worth investigating during practice.
 
@@ -106,7 +106,7 @@ Authorized match JSONs
      public/dados/
          │
          ▼
-  VALORANT.DATAS (Next.js)
+  Valorant Observatory (Next.js)
 ```
 
 ### Understanding Economy Delta
@@ -215,7 +215,7 @@ valorant/
 
 ## 🔎 Analysis Principles and Limitations
 
-VALORANT.DATAS is built for **historical, post-match analysis**, not live coaching or match prediction.
+Valorant Observatory is built for **historical, post-match analysis**, not live coaching or match prediction.
 
 - **Correlation is not causation:** differences in indicators do not establish why a team won or lost.
 - **Sample size matters:** smaller samples can produce unstable percentages. Diagnostic rules apply minimum observation counts and difference thresholds.
@@ -231,9 +231,9 @@ These limitations are also explained in the application's **Methodology** sectio
 ## 📸 Preview
 
 
-<img src="./src/imgs/site1.png" alt="VALORANT.DATAS dashboard" width="900">
-<img src="./src/imgs/site2.png" alt="VALORANT.DATAS teams" width="900">
-<img src="./src/imgs/site3.png" alt="VALORANT.DATAS compare" width="900">
+<img src="./src/imgs/site1.png" alt="Valorant Observatory dashboard" width="900">
+<img src="./src/imgs/site2.png" alt="Valorant Observatory teams" width="900">
+<img src="./src/imgs/site3.png" alt="Valorant Observatory compare" width="900">
 
 
 A screenshot of the application dashboard can be added here once available.
@@ -250,7 +250,7 @@ A screenshot of the application dashboard can be added here once available.
 
 ## ⚖️ Disclaimer
 
-VALORANT.DATAS is an **independent, educational hackathon project**. It is **not affiliated with, sponsored by, or endorsed by Riot Games**. VALORANT and related trademarks belong to their respective owners.
+Valorant Observatory is an **independent, educational hackathon project**. It is **not affiliated with, sponsored by, or endorsed by Riot Games**. VALORANT and related trademarks belong to their respective owners.
 
 ---
 
