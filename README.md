@@ -230,8 +230,11 @@ These limitations are also explained in the application's **Methodology** sectio
 
 ## 📸 Preview
 
-<!-- Add a real screenshot at docs/preview.png and uncomment the line below. -->
-<!-- <img src="./docs/preview.png" alt="VALORANT.DATAS dashboard" width="900"> -->
+
+<img src="./src/imgs/site1.png" alt="VALORANT.DATAS dashboard" width="900">
+<img src="./src/imgs/site2.png" alt="VALORANT.DATAS teams" width="900">
+<img src="./src/imgs/site3.png" alt="VALORANT.DATAS compare" width="900">
+
 
 A screenshot of the application dashboard can be added here once available.
 
